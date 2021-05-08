@@ -1,0 +1,628 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Verteidigung - DA</title>
+    <link rel="shortcut icon" type="image/x-icon" href="graphics/favicon.ico">
+
+		<link rel="stylesheet" href="reveal/dist/reset.css">
+		<link rel="stylesheet" href="reveal/dist/reveal.css">
+
+		<link rel="stylesheet" href="whiteTU.css" id="theme">
+    <link rel="stylesheet" href="reveal/graphics/slider.css">
+
+		<link rel="stylesheet" href="reveal/pugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-menu-title="Titelfolie" class="nofooter" data-background="-webkit-linear-gradient(-45deg, rgb(0, 105, 175) 0%, rgb(0, 48, 94) 100%)">
+          <div class="header unselectable" style="margin-left: auto; margin-right: auto; ">
+            <img src="logos/TUDresdenLogoBlau.png" style=" float: left; height: 3.5em; border: none; box-shadow: none; vertical-align: middle; margin: 1.25em 7.5vw 1.25em 7.5vw;">
+            <img src="logos/DDC_Logo.png" style=" float: right; height: 3.5em; border: none; box-shadow: none; vertical-align: middle; margin: 1.25em 7.5vw 1.25em 7.2vw;">
+          </div>
+          <div style="width: 100%; margin: auto; padding: 10vh 7.5vw 0 7.5vw; color: #fff; text-align: left; text-shadow: 1px 1px 4px #013; position: relative; top: 50%; -ms-transform: translateY(-50%); transform: translateY(-50%);">
+            <p>Fakultät Maschinenwesen<br>Professur für Numerische und Experimentelle Festkörpermechanik</p>
+            <hr style="visibility: hidden;" />
+            <h1 style="color: #fff; text-shadow: 1px 1px 4px #013;"><strong>Effiziente Isogeometrische Analyse<br>zwei- und dreidimensionaler Probleme</strong></h1>
+            <hr style="visibility: hidden;" />
+            <p>Dresden, 12.08.2019<br>Duffek, Johann Antonio</p>
+          </div>
+        </section>
+
+        <section data-menu-title="Inhalt">
+          <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+            <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+              <h2 style="display: inline; vertical-align: baseline;"><strong>Inhalt</strong></h3>
+            </div>
+          </div>
+          <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            <div class="toc" style="font-size: 1.15em !important; line-height: 140%;">
+              <ol>
+                <li><a href="#/2" title="Motivation"><span class="chapter ">Motivation</span><span class="toc-page">03</span></a></li>
+                <li><a href="#/4" title="Grundlagen"><span class="chapter">Grundlagen</span><span class="toc-page">05</span></a></li>
+                <li><a href="#/8" title="Programmänderungen"><span class="chapter">Programmänderungen</span><span class="toc-page">09</span></a>
+                  <ol>
+                    <li><a href="#/9" title="3D Erweiterung"><span class="chapter">3D Erweiterung</span><span class="toc-page">10</span></a></li>
+                    <li><a href="#/10" title="Alternativer QuadTree/OcTree"><span class="chapter">Alternativer QuadTree/OcTree</span><span class="toc-page">11</span></a></li>
+                    <li><a href="#/11" title="Überlappungsprojektion"><span class="chapter">Überlappungsprojektion</span><span class="toc-page">12</span></a></li>
+                    <li><a href="#/12" title="Programmversionen"><span class="chapter">Programmversionen</span><span class="toc-page">13</span></a></li>
+                  </ol>
+                </li>
+                <li><a href="#/13" title="Ergebnisse"><span class="chapter">Ergebnisse</span><span class="toc-page">14</span></a></li>
+                <li><a href="#/17" title="Baustellen"><span class="chapter">Fazit &amp; Ausblick</span><span class="toc-page">18</span></a></li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <section data-menu-title="Warum IGA?">
+          <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+            <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+              <h2 style="display: inline; vertical-align: baseline;"><strong>Motivation &#62; </strong></h3>
+                <h3 style="display: inline; vertical-align: baseline;"> Warum IGA?</h4>
+            </div>
+          </div>
+          <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            <div id="fig001" style="margin: 0 0; width: 80vw; height: 65vh;"></div>
+          </div>
+        </section>
+
+        <section data-menu-title="Warum adaptivität?">
+          <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+            <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+              <h2 style="display: inline; vertical-align: baseline;"><strong>Motivation &#62; </strong></h3>
+                <h3 style="display: inline; vertical-align: baseline;"> Warum adaptive Verfeinerung?</h4>
+            </div>
+          </div>
+          <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: row;">
+            <div id='fig002image' style="margin: 2px; font-size: 0.75em;"></div>
+            <div id="fig002" style="height: 65vh; min-height: 300px; width: 70vw; margin: 2px;"></div>
+          </div>
+        </section>
+
+        <section>
+          <section data-menu-title="Grundlagen: NURBS 1D">
+            <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+              <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+                <h2 style="display: inline; vertical-align: baseline;"><strong>Grundlagen &#62; </strong></h3>
+                  <h3 style="display: inline; vertical-align: baseline;"> NURBS-Kurven</h4>
+              </div>
+            </div>
+            <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+              <div id="fig003_TitleText" style="font-size: medium;">$$p_{1}=2;\; \Xi_{1}=\left(\xi_{1,1},\xi_{1,1},\xi_{1,1},\xi_{1,2},\xi_{1,3},\xi_{1,4},\xi_{1,5},\xi_{1,5},\xi_{1,5}\right)$$</div>
+              <div style="display: flex; justify-content: center; align-items: center; flex-direction: row; width: 100%; height: 55vh;">
+                <div id="fig003" style="margin: 2px; height: 55vh; min-height: 300px; width: 80vw;"></div>
+                <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; width: 8%; display: none" id="fig003_RangeContainer">
+                  <div style=" width: 10px; height: 45vh;">
+                    <input type="range" min="0.1" max="5.0" value="1" class="slider" step="0.1" id="fig003_RangeSlider" orient="vertical" style="height: 100%; margin:auto; " align="right">
+                  </div>
+                  <p id="SliderValue">w<sub>i</sub>=nan</p>
+                </div>
+              </div>
+              <div style="font-size: medium;">$$\mathbf{X}\left(\xi_{d}\right)=\sum_{i=1}^{n_{d}}{ \mathrm{R}_{i}\left(\xi_{d}\right) \; \mathbf{x}_{i}}$$</div>
+          </section>
+          <section data-menu-title="Formeln">
+            <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+              <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+                <h2 style="display: inline; vertical-align: baseline;"><strong>Grundlagen &#62; </strong></h3>
+                  <h3 style="display: inline; vertical-align: baseline;"> NURBS (univariat)</h4>
+              </div>
+            </div>
+            <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+              <p style="font-size: medium;"> $$ d=1 \; ; \; p_{d} \; ; \; \mathbf{\Xi}_{d}=\left(\xi_{d,1},\dots ,\xi_{d,i},\dots ,\xi_{d,n_{d}+p_{d}+1}\right) \; ; \; \xi_{d}\in\left[\xi_{d,1},\xi_{d,n_{d}+p_{d}+1}\right]_{\mathbb{R}}=\mathit{\Omega}_{d} \; ; \; \\ \mathbf{x}_{i} = \left( x_{i,1} , x_{i,2}, \dots \right)^\intercal \; ; \; w_{i} \; ; \; i\in\left[1,n_{d}\right]_{\mathbb{N}} $$ </p>
+              <p style="font-size: medium;"> $$ \mathrm{N}_{d,i,p_{d}}\left(\xi_{d}\right) = \left\{\begin{array}{ll}
+                \left\{\begin{array}{ll} 1 & \text{für } \xi_{d,i}\leq\xi_{d}\lt\xi_{d,i+1} \\ 0 & \text{sonst} \end{array}\right. & \text{für } p_{d}=0 \\ \frac{\displaystyle \xi_{d} - \xi_{d,i}}{\displaystyle \xi_{d,i+p_{d}} - \xi_{d,i}}\,\mathrm{N}_{d,i,p_{d}-1}\left(\xi_{d}\right) + \frac{\displaystyle \xi_{d,i+p_{d}+1} - \xi_{d}}{\displaystyle \xi_{d,i+p_{d}+1} - \xi_{d,i+1}}\,\mathrm{N}_{d,i+1,p_{d}-1}\left(\xi_{d}\right) & \text{für } p_{d} \geq 1 \end{array}\right. $$ </p>
+              <p> $$ \mathbf{X}\left(\xi_{d}\right) = \sum_{i=1}^{n_{d}}{\frac{\mathrm{N}_{d,i,p_{d}}\left(\xi_{d}\right)\; w_{i}}{\sum_{k=1}^{n_{d}}{\mathrm{N}_{d,i,p_{d}}\left(\xi_{d}\right)\; w_{k}}}\; \mathbf{x}_{i}} = \sum_{i=1}^{n_{d}}{\frac{\mathrm{N}_{d,i,p_{d}}\left(\xi_{d}\right)\; w_{i}}{w\left(\xi_{d}\right)}\; \mathbf{x}_{i}} = \sum_{i=1}^{n_{d}}{ \mathrm{R}_{i}\left(\xi_{d}\right) \; \mathbf{x}_{i}} $$</p>
+              <a href="https://www.springer.com/de/book/9783642973857" target="_blank" class="cite_link">[Piegl, L. und Tiller, W; 1996]</a>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Grundlagen: NURBS 2D">
+            <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+              <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+                <h2 style="display: inline; vertical-align: baseline;"><strong>Grundlagen &#62; </strong></h3>
+                  <h3 style="display: inline; vertical-align: baseline;"> NURBS-Flächen</h4>
+              </div>
+            </div>
+            <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: row;">
+              <div id="fig004" style="margin: 2px; height: 65vh; min-height: 300px; width: 80vw;"></div>
+            </div>
+          </section>
+          <section data-menu-title="Formeln">
+            <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+              <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+                <h2 style="display: inline; vertical-align: baseline;"><strong>Grundlagen &#62; </strong></h3>
+                  <h3 style="display: inline; vertical-align: baseline;"> NURBS (multivariat)</h4>
+              </div>
+            </div>
+            <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+              <p style="font-size: medium;">$$ p_{d} \; ; \; \mathbf{\Xi}_{d} \; ; \; \underline{\xi}=\left(\xi_{1},\dots,\xi_{d}\right)^\intercal \; ; \; n_{\mathrm{e}}=\prod_{d}{n_{d}} \; ; \; \mathbf{x}_{i} = \left( x_{i,1} , x_{i,2}, \dots \right)^\intercal \; ; \; w_{i} \; ; \; i\in\left[1,n\right]_{\mathbb{N}} $$ </p>
+              <p style="font-size: medium;">$$ \mathrm{N}_{i}\left(\underline{\xi}\right) = \prod_{b=1}^{d}{\mathrm{N}_{b,\tilde{\mathrm{i}}_{\mathrm{inv}}\left(i,\left(n_{d}\right),d,b\right),p_{b}}\left(\xi_{b}\right)} $$</p>
+              <p style="font-size: medium;">$$ \mathbf{X}\left(\underline{\xi}\right) = \sum_{i=1}^{n}{\frac{\mathrm{N}_{i}\left(\underline{\xi}\right)\; w_{i}}{\sum_{k=1}^{n}{\mathrm{N}_{k}\left(\underline{\xi}\right)\; w_{k}}}\; \mathbf{x}_{i}} = \sum_{i=1}^{n}{\frac{\mathrm{N}_{i}\left(\underline{\xi}\right)\; w_{i}}{w\left(\underline{\xi}\right)}\; \mathbf{x}_{i}} = \sum_{i=1}^{n}{ \mathrm{R}_{i}\left(\underline{\xi}\right) \; \mathbf{x}_{i}} $$
+              </p>
+              <a href="https://www.springer.com/de/book/9783642973857" target="_blank" class="cite_link">[Piegl, L. und Tiller, W; 1996]</a>
+            </div>
+          </section>
+          <section data-menu-title="Hilfsformeln">
+            <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+              <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+                <h2 style="display: inline; vertical-align: baseline;"><strong>Grundlagen &#62; </strong></h3>
+                  <h3 style="display: inline; vertical-align: baseline;"> NURBS (multivariat) - Hilfsfunktionen</h4>
+              </div>
+            </div>
+            <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+              <p style="font-size: medium;">$$ \tilde{\mathrm{i}}\left(\left(i,j,k\right),\left(n_{d}\right),d\right)=\left\{\begin{array}[c]{cl} i+\left(j-1\right)\; n_{1}+\left(k-1\right)\; n_{1}\; n_{2} & \text{für } d=3 \\ i+\left(j-1\right)\; n_{1} & \text{für } d=2 \\ i & \text{für } d=1 \end{array}\right. $$ </p>
+              <p style="font-size: medium;">$$ \tilde{\mathrm{i}}_{\mathrm{inv}}\left(i,\left(n_{d}\right),d,b\right)=\left\{\begin{array}[c]{cl} \left\lceil \frac{i}{\prod_{k=1}^{b-1}{n_{k}}} \right\rceil & \text{für } b\geq 2 \land b = d \\ \left\lceil \frac{i+\sum_{k=b+1}^{d}{\left[-\left(\tilde{\mathrm{i}}_{\mathrm{inv}}\left(i,\left(n_{d}\right),d,k\right) -1\right)\; \prod_{l=1}^{k-1}{n_{l}} \right]}}{\prod_{k=1}^{b-1}{n_{k}}} \right\rceil & \text{für } b>2 \land b \lt d \\ i+\sum_{k=b+1}^{d}{\left[-\left(\tilde{\mathrm{i}}_{\mathrm{inv}}\left(i,\left(n_{d}\right),d,k\right) -1\right)\; \prod_{l=1}^{k-1}{n_{l}} \right]} & \text{für } b=1 \land b \lt d \\ i & \text{für } b=1 \end{array}\right. $$</p>
+            </div>
+          </section>
+        </section>
+        <section data-menu-title="Grundlagen: Elementform.">
+          <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+            <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+              <h2 style="display: inline; vertical-align: baseline;"><strong>Grundlagen &#62; </strong></h3>
+                <h3 style="display: inline; vertical-align: baseline;"> IGA Elementformulierung</h4>
+            </div>
+          </div>
+          <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            <div style="display: flex; justify-content: center; align-items: center; flex-direction: row; width: 95%;">
+              <object class="unselectable" style="width: 45%; max-height: 100%; min-width: 550px;" data="graphics/bezier_extr.svg" type="image/svg+xml"> </object>
+              <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-left: 2%; font-size: medium; max-width: 45%;">
+                <p>Transformieren der Bernstein-Basispolynome in die Element-Basisfunktionen: <br>
+                  $$ \mathbf{R}^{\mathrm{L}}_{e} = \tilde{\mathbf{M}}^{\mathrm{L},\mathrm{B}}_{1,e}\;\mathbf{N}^{\mathrm{B}} $$ </p>
+                <p>Assemblieren der Systemmatrizen analog zur FEM:<br>
+                  $$ K_{i,j}^{\mathrm{L}} = \int_{\mathit{\Omega_{1,e}}}{\mathcal{F}}\left[\mathrm{R}_{i}^{L}\left(\xi\right),\mathrm{R}_{j}^{L}\left(\xi\right)\right] \left|\mathbf{J}\left(\xi\right)\right| \mathrm{d}\xi \\ \xi\in\mathit{\Omega}_{1,e} $$ </p>
+              </div>
+            </div>
+            <a href="https://doi.org/10.1002/nme.2968" target="_blank" class="cite_link">[Borden et al.; 2010]</a>
+          </div>
+        </section>
+        <section data-menu-title="Grundlagen: THB">
+          <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+            <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+              <h2 style="display: inline; vertical-align: baseline;"><strong>Grundlagen &#62; </strong></h3>
+                <h3 style="display: inline; vertical-align: baseline;"> THB</h4>
+            </div>
+          </div>
+          <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            <div style="display: flex; justify-content: center; align-items: center; flex-direction: row; width: 95%;">
+              <object class="unselectable" style="width: 45%; max-height: 100%; min-width: 550px;" data="graphics/THB_base.svg" type="image/svg+xml"> </object>
+              <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-left: 2%; font-size: medium; max-width: 45%;">
+                <p>Übersetzung von Level zu Level durch lokale Unterteilungsmatrizen: <br>
+                  $$ \mathbf{R}^{\mathrm{L1}} = \tilde{\mathbf{M}}^{\mathrm{L1},\mathrm{L2}}\;\mathbf{R}^{\mathrm{L2}} \\
+                  \mathbf{x}^{\mathrm{L2}} = \left(\tilde{\mathbf{M}}^{\mathrm{L1},\mathrm{L2}}\right)^\intercal\;\mathbf{x}^{\mathrm{L1}} $$ </p>
+                <p>Herstellen der THB-Levelbeziehungen durch globale red. Unterteilungsmatrix:<br>
+                  $$ \mathbf{K}^{\mathrm{H.mod}} = \tilde{\mathbf{M}}^{\mathrm{H.red}}\;\mathbf{K}^{\mathrm{H}}\;\left(\tilde{\mathbf{M}}^{\mathrm{H.red}}\right)^\intercal \\
+                  \mathbf{f}^{\mathrm{H.mod}} = \tilde{\mathbf{M}}^{\mathrm{H.red}}\;\mathbf{f}^{\mathrm{H}} $$ </p>
+              </div>
+            </div>
+            <a href="https://doi.org/10.1016/j.cma.2016.03.009" target="_blank" class="cite_link">[Hennig et al.; 2016]</a>
+          </div>
+        </section>
+        <section data-menu-title="Programmänderungen - Allgemeine Veränderungen">
+          <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+            <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+              <h2 style="display: inline; vertical-align: baseline;"><strong>Programmänderungen &#62; </strong></h3>
+                <h3 style="display: inline; vertical-align: baseline;"> Allgemeine Veränderungen</h4>
+            </div>
+          </div>
+          <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: row;">
+            <object class="unselectable" style="/* height: 70vh; width: 50vw; max-width: 350px; */" data="graphics/flow_chart00.svg" type="image/svg+xml"> </object>
+            <div style="font-size: 1.1em !important; margin-left: 5vh;">
+              <p style="text-align: start; font-size: 1.1em; font-weight: bold;"><u>Allgemeine Veränderungen:</u></p>
+              <ul style="list-style-type:disc; line-height: 160%;">
+                <li><span>Matrixgestütztes h- und p-Verfeinern</span></li>
+                <li><span>Adaptive Levelerzeugung</span></li>
+                <li><span>Béziermatrix und Bézierindizierung</span></li>
+                <li><span>Unterteilungsmatrix-Algorithmus</span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section data-menu-title="Programmänderungen - Trivariate Strukturen">
+          <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+            <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+              <h2 style="display: inline; vertical-align: baseline;"><strong>Programmänderungen &#62; </strong></h3>
+                <h3 style="display: inline; vertical-align: baseline;"> Trivariate Strukturen</h4>
+            </div>
+          </div>
+          <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            <div class="r-stack">
+              <object class="fragment fade-out unselectable" data-fragment-index="0" style="/* height: 70vh; width: 50vw; max-width: 350px; */ opacity: 1; display: flex;" data="graphics/flow_chart01.svg" type="image/svg+xml"> </object>
+              <div class="fragment fade-in unselectable" data-fragment-index="0" style="justify-content: center; align-items: center; flex-direction: row;">
+                <img class="unselectable" style="height: 70vh; max-width: 45vw; border: none; box-shadow: none; background: none;" src="graphics/3D_Rhino.png"> </img>
+                <object class="unselectable" style="height: 70vh; max-width: 45vw;" data="graphics/3D_Matlab.svg" type="image/svg+xml"> </object>
+              </div>
+            </div>
+            <a href="https://doi.org/10.1016/j.cma.2011.03.005" target="_blank" class="cite_link">[Xu et al.; 2011]</a>
+          </div>
+        </section>
+        <section data-menu-title="Programmänderungen - Alternativer QuadTree">
+          <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+            <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+              <h2 style="display: inline; vertical-align: baseline;"><strong>Programmänderungen &#62; </strong></h3>
+                <h3 style="display: inline; vertical-align: baseline;"> Alternativer QuadTree</h4>
+            </div>
+          </div>
+          <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            <div class="r-stack">
+            <object class="fragment fade-out unselectable" data-fragment-index="0" style="/* height: 70vh; width: 50vw; max-width: 350px; */ opacity: 1; display: flex;" data="graphics/flow_chart02.svg" type="image/svg+xml"> </object>
+            <div class="fragment fade-in unselectable" data-fragment-index="0" style="display: flex; justify-content: center; align-items: center; flex-direction: row;">
+              <object class="unselectable" style="width: 50vw; max-width: 750px;" data="graphics/QuadTree.svg" type="image/svg+xml"> </object>
+              <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-left: 5%; font-size: medium;">
+                <table>
+                  <tr>
+                    <td style="border-bottom: none; display: inline-block; border-right: none;">Speicherbed. alt:</td>
+                    <td style="border-bottom: none; display: inline-block;">\( n_{\mathrm{e}} \cdot n_{\mathrm{c}}^{N-1} \cdot N \)</td>
+                  </tr>
+                  <tr>
+                    <td style="border-bottom: none; display: inline-block; border-right: none;">Speicherbed. neu:</td>
+                    <td style="border-bottom: none; display: inline-block;">\( n_{\mathrm{e}} \cdot \sum_{k=1}^{N}{n_{\mathrm{c}}^{k}} \)</td>
+                  </tr>
+                </table>
+                <table style="text-align: end;">
+                  <tr>
+                    <td style="border-bottom: none; display: inline-block; border-right: none;">Startelemente:</td>
+                    <td style="border-bottom: none; display: inline-block;">\( n_{\mathrm{e}}\)</td>
+                  </tr>
+                  <tr>
+                    <td style="border-bottom: none; display: inline-block; border-right: none;">Elemente pro Kind:</td>
+                    <td style="border-bottom: none; display: inline-block;">\( n_{\mathrm{c}}\)</td>
+                  </tr>
+                  <tr>
+                    <td style="border-bottom: none; display: inline-block; border-right: none;">Levelanzahl:</td>
+                    <td style="border-bottom: none; display: inline-block;">\( N\)</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>
+        <section data-menu-title="Programmänderungen - Überlappungsprojektion">
+          <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+            <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+              <h2 style="display: inline; vertical-align: baseline;"><strong>Programmänderungen &#62; </strong></h3>
+                <h3 style="display: inline; vertical-align: baseline;"> Überlappungsprojektion</h4>
+            </div>
+          </div>
+          <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            <div class="r-stack">
+            <object class="fragment fade-out unselectable" data-fragment-index="0" style="/* height: 70vh; width: 50vw; max-width: 350px; */ opacity: 1; display: flex;" data="graphics/flow_chart03.svg" type="image/svg+xml"> </object>
+            <div class="fragment fade-in unselectable" data-fragment-index="0" style="display: flex; justify-content: center; align-items: center; flex-direction: row; width: 95%;">
+              <object class="unselectable" style="max-height: 70vh; width: 50vw; max-width: 800px;" data="graphics/knot_ins_step.svg" type="image/svg+xml"> </object>
+              <object class="unselectable" style="max-height: 70vh; width: 50vw; max-width: 600px;" data="graphics/knot_ins_step_num.svg" type="image/svg+xml"> </object>
+            </div>
+          </div>
+            <a href="https://www.springer.com/de/book/9783642973857" target="_blank" class="cite_link">[Piegl, L. und Tiller, W; 1996]</a>
+          </div>
+        </section>
+        <section data-menu-title="Programmversionen">
+          <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+            <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+              <h2 style="display: inline; vertical-align: baseline;"><strong>Programmänderungen &#62; </strong></h3>
+                <h3 style="display: inline; vertical-align: baseline;"> Programmversionen</h4>
+            </div>
+          </div>
+          <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: row;">
+
+            <table class="unselectable">
+              <thead>
+                <tr>
+                  <th class="hide" style="width: 15vw;"></th>
+                  <th style="font-weight: normal; width: 15vw;">neue Elementstrukturen und Algorithmen</th>
+                  <th style="font-weight: normal; width: 15vw;">unvollst. Berechnung d. Geometrie</th>
+                  <th style="font-weight: normal; width: 15vw;">nutzen bereits ber. Werte</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="bg-class-IGA00">IGA referenz</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="bg-class-IGA10">IGA voll</td>
+                  <td class="class-IGA-check"><span>&#10004;</span></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="bg-class-IGA11">IGA sparse</td>
+                  <td class="class-IGA-check"><span>&#10004;</span></td>
+                  <td class="class-IGA-check"><span>&#10004;</span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="bg-class-IGA12">IGA mit Ged.</td>
+                  <td class="class-IGA-check"><span>&#10004;</span></td>
+                  <td class="class-IGA-check"><span>&#10004;</span></td>
+                  <td class="class-IGA-check"><span>&#10004;</span></td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </section>
+        <section data-menu-title="Benchmarks">
+          <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+            <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+              <h2 style="display: inline; vertical-align: baseline;"><strong>Ergebnisse &#62; </strong></h3>
+                <h3 style="display: inline; vertical-align: baseline;"> Benchmarks</h4>
+            </div>
+          </div>
+          <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            <div style="display: flex; justify-content: center; align-items: center; flex-direction: row; width: 80%;">
+              <div id="fig_PlateHole_pde_fig" style=" width: 400px; display: block; margin-bottom: 20px;">
+                <div class="object_hover" id="PlateHole_pde_fig" style="width: 400px; "><object style="width: 100%; z-index: -1; position: relative;" data="graphics/PlateHole.svg" type="image/svg+xml"> </object></div>
+              </div>
+              <div id="fig_PlateHole_pde_text" style="margin-left: 7.5vh; margin-right: 7.5vh; text-align: center; display: block; ">
+                <p style="font-size: medium;"> $$ \left\{ \begin{array}[c]{cl} -\mathrm{div}\left(\mathbf{\sigma}\right) = 0 & \text{ auf } \mathit{\Omega} \\ \mathbf{u}\cdot\mathbf{n} = 0 & \text{ auf } \Gamma_{\mathrm{1}} \\ \mathbf{\sigma}\cdot\mathbf{n} = \mathbf{g} & \text{ auf } \Gamma_{\mathrm{2}} \end{array} \right.$$ </p>
+                <p style="font-size: medium;"> RB \(\mathbf{g}\) gemäß</p>
+                <p style="font-size: small;">$$ \begin{eqnarray}
+                  \sigma_{r} & = & \frac{\sigma_{\mathrm{0}}}{2}\,\left[1-\frac{r_{\mathrm{i}}^2}{r^2}+\left(1-4\,\frac{r_{\mathrm{i}}^{2}}{r^{2}}+3\,\frac{r_{\mathrm{i}}^{4}}{r^{4}}\right)\,\cos\left(2\phi\right)\right] \\
+                  \sigma_{\phi} & = & \frac{\sigma_{\mathrm{0}}}{2}\,\left[1+\frac{r_{\mathrm{i}}^2}{r^2}-\left(1+3\,\frac{r_{\mathrm{i}}^{4}}{r^{4}}\right)\,\cos\left(2\phi\right)\right] \\
+                  \sigma_{r\phi} & = & \frac{\sigma_{\mathrm{0}}}{2}\,\left[-1-2\,\frac{r_{\mathrm{i}}^2}{r^2}+3\,\frac{r_{\mathrm{i}}^{4}}{r^{4}}\right]\,\sin\left(2\phi\right)
+                  \end{eqnarray} $$</p>
+              </div>
+              <div id="fig_LShape_pde_fig" style=" width: 400px; display: none; margin-bottom: 20px;">
+                <div class="object_hover" id="LShape_pde_fig" style="width: 350px; "><object style="width: 100%; z-index: -1; position: relative;" data="graphics/LShape.svg" type="image/svg+xml"> </object></div>
+              </div>
+              <div id="fig_LShape_pde_text" style="margin-left: 7.5vh; margin-right: 7.5vh; text-align: center; display: none; ">
+                <p id="fig_LShape_pde_text001" style="font-size: medium;"> $$\left\{ \begin{array}[c]{cl} \Delta u = 0 & \text{ auf } \mathit{\Omega} \\ u = 0 & \text{ auf } \Gamma_{\mathrm{D}} \\ \frac{\partial u}{\partial \mathbf{n}} = g & \text{ auf } \Gamma_{\mathrm{N}} \end{array} \right.$$ </p>
+                <p id="fig_LShape_pde_text002" style="font-size: medium;"> RB \(g\) gemäß</p>
+                <p id="fig_LShape_pde_text003" style="font-size: medium;"> $$ u=r^{\frac{2}{3}}\,\sin\left(\frac{2\phi-\pi}{3}\right) $$</p>
+              </div>
+
+              <div id="fig_FicheraCorner_pde_fig" style=" width: 400px; display: none; margin-bottom: 20px;">
+                <div class="object_hover" id="FicheraCorner_pde_fig" style="width: 400px; "><object style="width: 100%; z-index: -1; position: relative;" data="graphics/FicheraCorner.svg" type="image/svg+xml"> </object></div>
+              </div>
+              <div id="fig_FicheraCorner_pde_text" style="margin-left: 7.5vh; margin-right: 7.5vh; text-align: center; display: none; ">
+                <p id="fig_FicheraCorner_pde_text001" style="font-size: medium;"> $$\left\{ \begin{array}[c]{cl} -\Delta u = f & \text{ auf } \mathit{\Omega} \\ u = g & \text{ auf } \Gamma_{\mathrm{D}} \\ \frac{\partial u}{\partial \mathbf{n}} = 0 & \text{ auf } \Gamma_{\mathrm{N}} \end{array} \right.$$ </p>
+                <p id="fig_FicheraCorner_pde_text002" style="font-size: medium;"> \(f\) und RB \(g\) gemäß</p>
+                <p id="fig_FicheraCorner_pde_text003" style="font-size: medium;"> $$ u=\left(x_{1}^{2}+x_{2}^{2}+x_{3}^{2}\right)^{\frac{1}{4}} $$</p>
+                <p id="fig_FicheraCorner_pde_text004" style="font-size: medium;"> $$ f=-\frac{3}{4}\,\left(x_{1}^{2}+x_{2}^{2}+x_{3}^{2}\right)^{-\frac{3}{4}} $$</p>
+              </div>
+
+              <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; height: 100%; position: absolute; right: 1%;">
+                <div style=" width: 100%;">
+                  <div class="object_hover" id="fig_pde_sel_PlateHole" style="width: 75px; "><object style="width: 100%; z-index: -1; position: relative;" data="graphics/ICO_PlateHole.svg" type="image/svg+xml"> </object></div>
+                </div>
+                <div style=" width: 100%;">
+                  <div class="object_hover" id="fig_pde_sel_LShape" style="width: 75px; "><object style="width: 100%; z-index: -1; position: relative;" data="graphics/ICO_LShape.svg" type="image/svg+xml"> </object></div>
+                </div>
+                <div style=" width: 100%;">
+                  <div class="object_hover" id="fig_pde_sel_FicheraCorner" style="width: 75px; "><object style="width: 100%; z-index: -1; position: relative;" data="graphics/ICO_FicheraCorner.svg" type="image/svg+xml"> </object></div>
+                </div>
+              </div>
+            </div>
+            <a id="fig_FicheraCorner_pde_cite" href="http://dx.doi.org/10.1016/j.cma.2014.04.008" target="_blank" class="cite_link" style="display: none;">[Schillinger et al.; 2014]</a>
+            <a id="fig_PlateHole_pde_cite001" target="_blank" class="cite_link" style="display: block;">[Kirsch, G.; 1898]</a>
+            <a id="fig_PlateHole_pde_cite002" href="https://doi.org/10.1016/j.cma.2016.07.029" target="_blank" class="cite_link" style="display: block;">[Hennig et al.; 2017]</a>
+            <a id="fig_LShape_pde_cite001" href="https://doi.org/10.1137/100809799" target="_blank" class="cite_link" style="display: none;">[Demkowicz, L. und Gopalakrishnan, J.; 2011]</a>
+            <a id="fig_LShape_pde_cite002" href="https://doi.org/10.1016/j.cma.2016.07.029" target="_blank" class="cite_link" style="display: none;">[Hennig et al.; 2017]</a>
+          </div>
+        </section>
+        <section>
+          <section data-menu-title="Konvergenzstudien">
+            <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+              <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+                <h2 style="display: inline; vertical-align: baseline;"><strong>Ergebnisse &#62; </strong></h3>
+                  <h3 style="display: inline; vertical-align: baseline;"> Konvergenzstudien</h4>
+              </div>
+            </div>
+            <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: row;">
+              <div id="fig005" style="height: 65vh; min-height: 300px; width: 70vw; margin: 2px;"></div>
+              <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; height: 100%; position: absolute; right: 50px;">
+                <div style=" width: 100%;">
+                  <div class="object_hover" id="fig005_sel_PlateHole" style="width: 80px; "><object style="width: 100%; z-index: -1; position: relative;" data="graphics/ICO_PlateHole.svg" type="image/svg+xml"> </object></div>
+                </div>
+                <div style=" width: 100%;">
+                  <div class="object_hover" id="fig005_sel_LShape" style="width: 80px; "><object style="width: 100%; z-index: -1; position: relative;" data="graphics/ICO_LShape.svg" type="image/svg+xml"> </object></div>
+                </div>
+                <div style=" width: 100%;">
+                  <div class="object_hover" id="fig005_sel_FicheraCorner" style="width: 80px; "><object style="width: 100%; z-index: -1; position: relative;" data="graphics/ICO_FicheraCorner.svg" type="image/svg+xml"> </object></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section data-menu-title="ideale Konvergenz">
+            <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+              <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+                <h2 style="display: inline; vertical-align: baseline;"><strong>Konvergenzstudie &#62; </strong></h3>
+                  <h3 style="display: inline; vertical-align: baseline;"> Konvergenz für singuläre Fälle</h4>
+              </div>
+            </div>
+            <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+              <object class="unselectable" style="width: 12vw; min-width: 175px;" data="graphics/singular_beta.svg" type="image/svg+xml"> </object>
+              <p> $$ k=-\frac{1}{2} \mathrm{min}\left(p,\frac{\pi}{2\pi-\beta}\right) $$</p>
+              <a href="https://link.springer.com/book/10.1007%2F978-1-4614-1508-4" target="_blank" class="cite_link">[Yosibash, Z; 2012]</a>
+              <a href="https://doi.org/10.1016/j.cma.2016.07.029" target="_blank" class="cite_link">[Hennig et al.; 2017]</a>
+            </div>
+          </section>
+        </section>
+        <section data-menu-title="Laufzeitstudien">
+          <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+            <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+              <h2 style="display: inline; vertical-align: baseline;"><strong>Ergebnisse &#62; </strong></h3>
+                <h3 style="display: inline; vertical-align: baseline;"> Laufzeitstudien</h4>
+            </div>
+          </div>
+          <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: row;">
+            <div id="fig006" style="height: 65vh; min-height: 300px; width: 70vw; margin: 2px;"></div>
+            <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; height: 100%; position: absolute; right: 50px;">
+              <div style=" width: 100%;">
+                <div class="object_hover" id="fig006_sel_PlateHole" style="width: 80px; "><object style="width: 100%; z-index: -1; position: relative;" data="graphics/ICO_PlateHole.svg" type="image/svg+xml"> </object></div>
+              </div>
+              <div style=" width: 100%;">
+                <div class="object_hover" id="fig006_sel_LShape" style="width: 80px; "><object style="width: 100%; z-index: -1; position: relative;" data="graphics/ICO_LShape.svg" type="image/svg+xml"> </object></div>
+              </div>
+              <div style=" width: 100%;">
+                <div class="object_hover" id="fig006_sel_FicheraCorner" style="width: 80px; "><object style="width: 100%; z-index: -1; position: relative;" data="graphics/ICO_FicheraCorner.svg" type="image/svg+xml"> </object></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <section data-menu-title="Speicherstudien">
+            <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+              <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+                <h2 style="display: inline; vertical-align: baseline;"><strong>Ergebnisse &#62; </strong></h3>
+                  <h3 style="display: inline; vertical-align: baseline;"> Speicherstudien</h4>
+              </div>
+            </div>
+            <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: row;">
+              <div id="fig007" style="height: 65vh; min-height: 300px; width: 70vw; margin: 2px;"></div>
+              <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; height: 100%; position: absolute; right: 50px;">
+                <div style=" width: 100%;">
+                  <div class="object_hover" id="fig007_sel_PlateHole" style="width: 80px; "><object style="width: 100%; z-index: -1; position: relative;" data="graphics/ICO_PlateHole.svg" type="image/svg+xml"> </object></div>
+                </div>
+                <div style=" width: 100%;">
+                  <div class="object_hover" id="fig007_sel_LShape" style="width: 80px; "><object style="width: 100%; z-index: -1; position: relative;" data="graphics/ICO_LShape.svg" type="image/svg+xml"> </object></div>
+                </div>
+                <div style=" width: 100%;">
+                  <div class="object_hover" id="fig007_sel_FicheraCorner" style="width: 80px; "><object style="width: 100%; z-index: -1; position: relative;" data="graphics/ICO_FicheraCorner.svg" type="image/svg+xml"> </object></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section data-menu-title="Speicherstudien det.">
+            <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+              <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+                <h2 style="display: inline; vertical-align: baseline;"><strong>Ergebnisse &#62; </strong></h3>
+                  <h3 style="display: inline; vertical-align: baseline;"> Speicherstudien detailiert</h4>
+              </div>
+            </div>
+            <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: row;">
+              <div id="fig008" style="height: 65vh; min-height: 300px; width: 70vw; margin: 2px;"></div>
+              <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; height: 100%; position: absolute; right: 50px;">
+                <div style=" width: 100%;">
+                  <div class="object_hover" id="fig008_sel_PlateHole" style="width: 80px; "><object style="width: 100%; z-index: -1; position: relative;" data="graphics/ICO_PlateHole.svg" type="image/svg+xml"> </object></div>
+                </div>
+                <div style=" width: 100%;">
+                  <div class="object_hover" id="fig008_sel_LShape" style="width: 80px; "><object style="width: 100%; z-index: -1; position: relative;" data="graphics/ICO_LShape.svg" type="image/svg+xml"> </object></div>
+                </div>
+                <div style=" width: 100%;">
+                  <div class="object_hover" id="fig008_sel_FicheraCorner" style="width: 80px; "><object style="width: 100%; z-index: -1; position: relative;" data="graphics/ICO_FicheraCorner.svg" type="image/svg+xml"> </object></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section data-menu-title="Fazit">
+          <div class="header unselectable" style="margin-left: auto; margin-right: auto; vertical-align: baseline;">
+            <div style="text-align: left; vertical-align: baseline; margin: 0.8em 7.5vh 0.8em 7.5vw; float: left;">
+              <h2 style="display: inline; vertical-align: baseline;"><strong>Fazit &amp; Ausblick </strong></h3>
+            </div>
+          </div>
+          <div class="slidespace" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            <div style="font-size: 1.1em !important; margin-left: 5vh;">
+              <h3 style="text-align: start;"><u>Fazit:</u></h3>
+              <ul style="list-style-type:disc; line-height: 160%; display: contents;">
+                <li><span>die projektion d. Patchrel. ermögl. Laufzeiteinspaarungen bis zu 90%</span></li>
+                <li><span>die "sparse-Modifikationen" sind bis zu 30% langsammer<br>benötigen jedoch bis zu 50% weniger Speicher</span></li>
+                <li><span>zur "Gedächtnis-Modifikation" keine klare Aussage möglich</span></li>
+              </ul>
+              <h3 style="text-align: start; margin-top: 20px;"><u>Verbesserungspotential:</u></h3>
+              <ul style="list-style-type:disc; line-height: 160%; display: contents;">
+                <li><span>Volumenreparametrisierung</span></li>
+                <li><span>QuadTree/OcTree-Verwaltungsstruktur</span></li>
+                <li><span>projizieren der Patchrelationen</span></li>
+                <li><span>nutzen globaler Variablen (Matlab-spezifisch)</span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+			</div>
+		</div>
+
+    <div id="LShape_pde_fig_modal" class="modal_img" style="z-index: 5; background-image: url('graphics/LShape_solu.png'); background-repeat: no-repeat;  background-size: contain; background-position: center; "></div>
+    <div id="PlateHole_pde_fig_modal" class="modal_img" style="z-index: 5; background-image: url('graphics/PlateHole_solu.png'); background-repeat: no-repeat;  background-size: contain; background-position: center; "></div>
+    <div id="FicheraCorner_pde_fig_modal" class="modal_img" style="z-index: 5; background-image: url('graphics/FicheraCorner_solu.png'); background-repeat: no-repeat;  background-size: contain; background-position: center; "></div>
+    <div id="snackbar" style="text-align: start; font-family: Courier New;">Some text some message..</div>
+
+    <script src="reveal/module/math.min.js"></script>
+		<script src="reveal/dist/reveal.js"></script>
+    <script src="reveal/plugin/menu/menu.js"></script>
+    <script src="reveal/plugin/math/math.js"></script>
+
+
+
+    <script src="reveal/module/plotly-latest.min.js"></script>
+
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+        controlsTutorial: false,
+				hash: true,
+        history: false,
+        transition: 'slide',
+        backgroundTransition: 'slide',
+        slideNumber: 'v.h',
+        width: "100%",
+        height: "100%",
+        margin: 0,
+        minScale: 1,
+        maxScale: 1,
+        center: true,
+        viewDistance: 99,
+        menu: {
+          side: 'left',
+          width: 'normal',
+          numbers: true,
+          useTextContentForMissingTitles: false,
+          hideMissingTitles: false,
+          markers: false,
+          custom: false,
+          themes: false,
+          transitions: false,
+          openButton: false,
+          openSlideNumber: true,
+        },
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+          //config: 'TeX-AMS-MML_SVG',
+          // pass other options into `MathJax.Hub.Config()`
+          // TeX: { Macros: { RR: "{\\bf R}" } }
+        },
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMenu, RevealMath]
+			});
+		</script>
+
+    <div id="hidden" style="display: none;">
+      <div id="footer">
+        <div class="footer unselectable" style="display: inline-block; border-style: solid; border-width: 1px; border-image: linear-gradient(to left, rgba(0,0,0,0) 1%, rgba(180,180,180,0.5) 50%, rgba(0,0,0,0) 100%) 100% 0 0 0/1px 0 0 0 stretch; border-top-width: 0.5px;">
+          <img src="logos/TUDresdenLogoBlau.png" style="float: left; height: 2.2em; border: none; box-shadow: none;margin: 0.6em 2.5vw 0.6em 7.5vw;">
+          <small style="line-height: 1.1em !important; height: 4.2em; font-size: 0.6em !important; float: left; text-align: left; margin: 0.6em 0 0.6em 0; color: rgb(114,120,121); width: 50vw; text-overflow: ellipsis; overflow: hidden;">Diplomverteidigung<br>Effiziente Isogeometrische Analyse zwei- und dreidimensionaler Probleme<br>Duffek, Johann Antonio<br>Dresden, 12.08.2019</small>
+          <img src="logos/DDC_Logo.png" style="float: right; height: 2.2em; border: none; box-shadow: none; margin: 0.6em 7.5vw 0.6em 2.5vw;">
+        </div>
+      </div>
+    </div>
+    <script src="reveal/module/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" defer>
+      // 3. On Reveal.js ready event, copy header/footer <div> into each `.slide-background` <div>
+      var footer = $('#footer').html();
+      if (window.location.search.match(/print-pdf/gi)) {
+        Reveal.addEventListener('ready', function(event) {
+          $('.slide-background').append(footer);
+        });
+      } else {
+        $('section:not(:has(>section)):not(.nofooter)').append(footer);
+      }
+    </script>
+
+<script src="graphics/nurbs_funs.js"></script>
+<script src="graphics/help_funs.js"></script>
+<script src="graphics/graphics.js" async defer></script>
+<script src="graphics/offline_mod2.js" async defer></script>
+	</body>
+</html>

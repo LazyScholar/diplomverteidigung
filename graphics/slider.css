@@ -1,0 +1,40 @@
+/* drag behavior from : http://bl.ocks.org/niclasmattsson/7bceb05fba6c71c78d507adae3d29417 */
+      .scatterlayer .scatter .points .point {
+        pointer-events: all !important;
+      }
+
+      .slider {
+        -webkit-appearance: slider-vertical;
+        width: 2px;
+        height: 100%;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.4;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+      }
+
+      /* Mouse-over effects */
+
+      .slider:hover {
+        opacity: 1;
+        /* Fully shown on mouse-over */
+      }
+
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: slider-vertical;
+        appearance: none;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #0077be;
+        cursor: pointer;
+      }
+
+      .slider::-moz-range-thumb {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #0077be;
+        cursor: pointer;
+      }

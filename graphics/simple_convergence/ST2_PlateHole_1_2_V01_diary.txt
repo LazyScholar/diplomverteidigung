@@ -1,0 +1,711 @@
+__________________________________________________________________________________________ 
+Date / Time: 06-Jul-2019 15:45:55
+Running IFKM FEM Code
+
+Processing information from: PlateHole_custom
+Mechanical analysis
+Total number of Elements: 4
+Total number of Nodes: 25
+Done in 0s. 
+
+Collecting quadrature information: 
+Quadrature points of active elements: 64 
+Done in 0s. 
+
+Generating nodal DOFs for indexing: 
+Done in 0s. 
+
+Set up hierarchical B-spline mesh: 
+Number of active Elements: 4
+Number of active Nodes: 25
+Done in 0s. 
+
+Applying initial conditions: 
+Done in 0s.
+
+Processing boundary conditions and internal constraints: 
+Standard BCs
+Done in 0 s. 
+
+Preparing postprocessing: 
+Done in 0 s. 
+
+Iterative solution of the model: 
+Assembling Tangent Matrix and Load Vector: 0.031004s
+---------------------------------------------------------------------------
+06-Jul-2019 15:45:56 Increment: 1, time at the end of the load step: 0.14286
+Solving system Ax=b: 0.036974s
+Assembling Tangent Matrix and Load Vector: 0.00988s
+Error norms for 1. field (dimension: 2) - load: 5.23553e-08, primary field: 1.00000e+00
+Iteration 1: Done
+Solving system Ax=b: 0.033715s
+Assembling Tangent Matrix and Load Vector: 0.011856s
+Error norms for 1. field (dimension: 2) - load: 5.54188e-09, primary field: 2.01972e-15
+Iteration 2: Done
+Writing incremental solution to ParaView file.
+Adaptive local refinement and coarsening: Creating Level: 2
+Processing boundary conditions and internal constraints: 
+Standard BCs
+Done in 0 s. 
+0.29928 s 
+Active Elements: 16, Active Nodes: 49
+Calculated Elements: 20, Virtual Elements: 20
+Calculated Nodes: 74, Virtual Nodes 74
+---------------------------------------------------------------------------
+06-Jul-2019 15:45:57 Increment: 2, time at the end of the load step: 0.28571
+Solving system Ax=b: 0.031872s
+Assembling Tangent Matrix and Load Vector: 0.021974s
+Error norms for 1. field (dimension: 2) - load: 3.77793e-08, primary field: 1.00000e+00
+Iteration 1: Done
+Solving system Ax=b: 0.030258s
+Assembling Tangent Matrix and Load Vector: 0.02376s
+Error norms for 1. field (dimension: 2) - load: 2.85285e-08, primary field: 1.13511e-14
+Iteration 2: Done
+Writing incremental solution to ParaView file.
+Adaptive local refinement and coarsening: Creating Level: 3
+Processing boundary conditions and internal constraints: 
+Standard BCs
+Done in 0 s. 
+0.33045 s 
+Active Elements: 64, Active Nodes: 121
+Calculated Elements: 84, Virtual Elements: 84
+Calculated Nodes: 195, Virtual Nodes 195
+---------------------------------------------------------------------------
+06-Jul-2019 15:45:58 Increment: 3, time at the end of the load step: 0.42857
+Solving system Ax=b: 0.056621s
+Assembling Tangent Matrix and Load Vector: 0.079502s
+Error norms for 1. field (dimension: 2) - load: 1.15205e-07, primary field: 1.00000e+00
+Iteration 1: Done
+Solving system Ax=b: 0.039403s
+Assembling Tangent Matrix and Load Vector: 0.073898s
+Error norms for 1. field (dimension: 2) - load: 7.17570e-16, primary field: 1.45793e-14
+Iteration 2: Done
+Writing incremental solution to ParaView file.
+Adaptive local refinement and coarsening: Creating Level: 4
+Processing boundary conditions and internal constraints: 
+Standard BCs
+Done in 0 s. 
+0.82097 s 
+Active Elements: 196, Active Nodes: 268
+Calculated Elements: 260, Virtual Elements: 340
+Calculated Nodes: 480, Virtual Nodes 556
+---------------------------------------------------------------------------
+06-Jul-2019 15:46:00 Increment: 4, time at the end of the load step: 0.57143
+Solving system Ax=b: 0.052256s
+Assembling Tangent Matrix and Load Vector: 0.21961s
+Error norms for 1. field (dimension: 2) - load: 1.22902e-07, primary field: 1.00000e+00
+Iteration 1: Done
+Solving system Ax=b: 0.046762s
+Assembling Tangent Matrix and Load Vector: 0.21709s
+Error norms for 1. field (dimension: 2) - load: 1.10620e-07, primary field: 6.81229e-14
+Iteration 2: Done
+Writing incremental solution to ParaView file.
+Adaptive local refinement and coarsening: Creating Level: 5
+Processing boundary conditions and internal constraints: 
+Standard BCs
+Done in 0 s. 
+2.1131 s 
+Active Elements: 565, Active Nodes: 688
+Calculated Elements: 752, Virtual Elements: 1364
+Calculated Nodes: 1151, Virtual Nodes 1781
+---------------------------------------------------------------------------
+06-Jul-2019 15:46:04 Increment: 5, time at the end of the load step: 0.71429
+Solving system Ax=b: 0.082342s
+Assembling Tangent Matrix and Load Vector: 0.58564s
+Error norms for 1. field (dimension: 2) - load: 3.23848e-07, primary field: 1.00000e+00
+Iteration 1: Done
+Solving system Ax=b: 0.082195s
+Assembling Tangent Matrix and Load Vector: 0.59669s
+Error norms for 1. field (dimension: 2) - load: 2.70879e-09, primary field: 2.60150e-13
+Iteration 2: Done
+Writing incremental solution to ParaView file.
+Adaptive local refinement and coarsening: Creating Level: 6
+Processing boundary conditions and internal constraints: 
+Standard BCs
+Done in 0 s. 
+5.6579 s 
+Active Elements: 1618, Active Nodes: 1736
+Calculated Elements: 2156, Virtual Elements: 5460
+Calculated Nodes: 3508, Virtual Nodes 6270
+---------------------------------------------------------------------------
+06-Jul-2019 15:46:13 Increment: 6, time at the end of the load step: 0.85714
+Solving system Ax=b: 0.1894s
+Assembling Tangent Matrix and Load Vector: 1.7211s
+Error norms for 1. field (dimension: 2) - load: 4.42749e-07, primary field: 1.00000e+00
+Iteration 1: Done
+Solving system Ax=b: 0.20131s
+Assembling Tangent Matrix and Load Vector: 1.7033s
+Error norms for 1. field (dimension: 2) - load: 7.36000e-08, primary field: 2.00029e-12
+Iteration 2: Done
+Writing incremental solution to ParaView file.
+Adaptive local refinement and coarsening: Creating Level: 7
+Processing boundary conditions and internal constraints: 
+Standard BCs
+Done in 0 s. 
+16.1559 s 
+Active Elements: 4495, Active Nodes: 4553
+Calculated Elements: 5992, Virtual Elements: 21844
+Calculated Nodes: 9838, Virtual Nodes 23431
+---------------------------------------------------------------------------
+06-Jul-2019 15:46:37 Increment: 7, time at the end of the load step: 1
+Solving system Ax=b: 0.56025s
+Assembling Tangent Matrix and Load Vector: 4.715s
+Error norms for 1. field (dimension: 2) - load: 6.55682e-07, primary field: 1.00000e+00
+Iteration 1: Done
+Solving system Ax=b: 0.61664s
+Assembling Tangent Matrix and Load Vector: 4.6847s
+Error norms for 1. field (dimension: 2) - load: 3.63777e-07, primary field: 2.01631e-11
+Iteration 2: Done
+Writing incremental solution to ParaView file.
+---------------------------------------------------------------------------
+Model solved in 62s. 
+Total evaluation time: 1.0497 min [62.981003 s]
+ [ model                              |                    1]     129.1870 MB
+ |[AnalysisType                       |                   10]      20.0000  B
+ |[ActiveFields                       |                    1]       8.0000  B
+ |[CurrentIncrement                   |                    1]       8.0000  B
+ |[MaxIncrements                      |                    1]       8.0000  B
+ |[Thickness                          |                    1]       8.0000  B
+ |[PlaneCondition                     |                    1]       8.0000  B
+ |[NonlinGeom                         |                    1]       8.0000  B
+ |[ScalarPotential                    |                    1]       8.0000  B
+ |[Time                               |                    2]      16.0000  B
+ |[TimeStep                           |                    1]       8.0000  B
+ |[CurrentTimeStep                    |                    1]       8.0000  B
+ |[SavedIncrements                    |                    1]       8.0000  B
+ |[MaxNodalDOFs                       |                    1]       8.0000  B
+ |[QPRange                            |                    1]     136.0000  B
+ |[TotalTime                          |                    1]       8.0000  B
+ |[IterationInformation               |                   28]     224.0000  B
+ |[LocalizationAngle                  |                    1]       8.0000  B
+ |[IGAActive                          |                    1]       8.0000  B
+ |[RemeshActive                       |                    1]       8.0000  B
+ |[Materials                          |                    1]       1.2740 kB
+ |[InitialConditions                  |                    0]          ... -B
+ |[BoundaryConditions                 |                    1]       9.6960 kB
+ -|[StandardBCsActive                 |                    1]       1.0000  B
+ -|[HomogenizationBCsActive           |                    1]       1.0000  B
+ -|[PeriBC                            |                    1]       8.0000  B
+ -|[NodeBC                            |                    1]     112.0000  B
+ -|[PointBC                           |                    1]       8.0000  B
+ -|[LineBC                            |                    1]       8.0000  B
+ -|[FaceBC                            |                    1]       8.0000  B
+ -|[BSetBC                            |                    1]       8.0000  B
+ -|[Table                             |                    1]     160.0000  B
+ -|[LoadFunction                      |                    1]     144.0000  B
+ -|[IGANeumannBC                      |                    0]          ... -B
+ -|[IGADirichletBC                    |                   12]       2.5260 kB
+ --|[cell #    1                      |                    1]       8.0000  B
+ --|[cell #    2                      |                    1]       8.0000  B
+ --|[cell #    3                      |                    1]       8.0000  B
+ --|[cell #    4                      |                    1]     120.0000  B
+ --|[cell #    5                      |                    1]     120.0000  B
+ --|[cell #    6                      |                    1]     120.0000  B
+ --|[cell #    7                      |                    2]     240.0000  B
+ --|[cell #    8                      |                    2]     240.0000  B
+ --|[cell #    9                      |                    2]     294.0000  B
+ --|[cell #   10                      |                    1]       8.0000  B
+ --#[cell #   11                      |                    1]       8.0000  B
+ --|[cell #   12                      |                    1]       8.0000  B
+ -|[IGAPeriodicBC                     |                    0]          ... -B
+ -|[IGAVolumeForce                    |                    0]          ... -B
+ -|[Tmatrices                         |                    3]       2.0640 kB
+ -|[Collocation                       |                    3]     968.0000  B
+ -#[IndexingArrays                    |                    3]     688.0000  B
+ |[Solver                             |                    1]     386.2820 kB
+ -|[solverName                        |                    9]      18.0000  B
+ -|[solverOpts                        |                    0]          ... -B
+ -|[UseParallelization                |                    1]       1.0000  B
+ -|[ProceedIfNotConverged             |                    1]       8.0000  B
+ -|[BCMethod                          |                    1]       8.0000  B
+ -|[RelativePenalty                   |                    1]       8.0000  B
+ -|[MaxIter                           |                    1]       8.0000  B
+ -|[ErrorResidual                     |                    1]       8.0000  B
+ -|[ErrorPrimary                      |                    1]       8.0000  B
+ -|[ComputeRelevantCondition          |                    0]          ... -B
+ -|[AbsErrorResidual                  |                    2]      16.0000  B
+ -|[AbsErrorPrimary                   |                    2]      16.0000  B
+ -|[CheckIncrementalResiduum          |                    1]       8.0000  B
+ -|[UseNormForConvergenceCriterion    |                    2]       4.0000  B
+ -|[UpdateBCs                         |                    1]     352.0000  B
+ -|[AddGlobalDOF                      |                    1]       8.0000  B
+ -|[SecondOrderDerivative             |                    1]       8.0000  B
+ -|[AdaptiveTime                      |                    1]     883.0000  B
+ -|[Dynamic                           |                    1]     559.0000  B
+ -|[ArcLength                         |                    1]       2.0090 kB
+ -|[Staggered                         |                    1]     376.0320 kB
+ -|[CheckPoint                        |                    1]       2.2400 kB
+ -#[Penalty                           |                    1]      32.0000  B
+ |[IGA                                |                    1]      44.0576 MB
+ -|[nHierarchicalLevels               |                    1]       8.0000  B
+ -|[InitialLevel                      |                    1]       8.0000  B
+ -|[Initial_h_Refinement              |                    1]       8.0000  B
+ -|[Initial_p_Refinement              |                    1]       8.0000  B
+ -|[InitialRefinement                 |                    0]          ... -B
+ -|[AdaptiveMeshParameter             |                    1]       2.1020 kB
+ -|[UseC0Elements                     |                    1]       1.0000  B
+ -|[AdaptiveElementGeneration         |                    1]       1.0000  B
+ -|[nMaxHierarchicalLevels            |                    1]       8.0000  B
+ -|[useAdaptiveMemory                 |                    1]       8.0000  B
+ -|[DontMergePatchBoundary            |                    0]          ... -B
+ -|[self_inters                       |                    7]     944.0000  B
+ --|[cell #    1                      |                    1]     112.0000  B
+ --|[cell #    2                      |                    1]       8.0000  B
+ --|[cell #    3                      |                    1]       8.0000  B
+ --|[cell #    4                      |                    1]       8.0000  B
+ --|[cell #    5                      |                    1]       8.0000  B
+ --|[cell #    6                      |                    1]       8.0000  B
+ --|[cell #    7                      |                    1]       8.0000  B
+ -|[point_inters                      |                    7]     840.0000  B
+ --|[cell #    1                      |                    1]       8.0000  B
+ --|[cell #    2                      |                    1]       8.0000  B
+ --|[cell #    3                      |                    1]       8.0000  B
+ --|[cell #    4                      |                    1]       8.0000  B
+ --|[cell #    5                      |                    1]       8.0000  B
+ --|[cell #    6                      |                    1]       8.0000  B
+ --|[cell #    7                      |                    1]       8.0000  B
+ -|[edge_inters                       |                    7]     840.0000  B
+ --|[cell #    1                      |                    1]       8.0000  B
+ --|[cell #    2                      |                    1]       8.0000  B
+ --|[cell #    3                      |                    1]       8.0000  B
+ --|[cell #    4                      |                    1]       8.0000  B
+ --|[cell #    5                      |                    1]       8.0000  B
+ --|[cell #    6                      |                    1]       8.0000  B
+ --|[cell #    7                      |                    1]       8.0000  B
+ -|[elem_neighbours                   |                    7]     840.0000  B
+ --|[cell #    1                      |                    1]       8.0000  B
+ --|[cell #    2                      |                    1]       8.0000  B
+ --|[cell #    3                      |                    1]       8.0000  B
+ --|[cell #    4                      |                    1]       8.0000  B
+ --|[cell #    5                      |                    1]       8.0000  B
+ --|[cell #    6                      |                    1]       8.0000  B
+ --|[cell #    7                      |                    1]       8.0000  B
+ -|[nTotElem                          |                    1]       8.0000  B
+ -|[Patches                           |                    7]       1.4632 MB
+ --|[cell #    1                      |                    1]       5.0760 kB
+ ---|[GlobalID                        |                    1]       8.0000  B
+ ---|[Degree                          |                    2]      16.0000  B
+ ---|[uKnot                           |                    9]      72.0000  B
+ ---|[vKnot                           |                    9]      72.0000  B
+ ---|[ubez_ij                         |                    4]      32.0000  B
+ ---|[vbez_ij                         |                    4]      32.0000  B
+ ---|[uM_bez                          |                   35]     512.0000  B
+ ---|[vM_bez                          |                   35]     512.0000  B
+ ---|[nCP_u_v                         |                    2]      16.0000  B
+ ---|[nE_u_v                          |                    2]      16.0000  B
+ ---|[HLevel                          |                    1]       8.0000  B
+ ---|[first_elem                      |                    1]       8.0000  B
+ ---|[Material                        |                    1]       8.0000  B
+ ---|[PatchFamily                     |                    7]      56.0000  B
+ ---|[NodeID_Patch2Global             |                   25]     100.0000  B
+ ---|[BoundaryCP                      |                    4]     608.0000  B
+ ---#[ChildPatch                      |                    1]       8.0000  B
+ --|[cell #    2                      |                    1]      17.2360 kB
+ ---|[GlobalID                        |                    1]       8.0000  B
+ ---|[ParentPatch                     |                    1]       8.0000  B
+ ---|[Degree                          |                    2]      16.0000  B
+ ---|[uKnot                           |                   11]      88.0000  B
+ ---|[uKnot_bez                       |                   17]     136.0000  B
+ ---|[ubez_ij                         |                    8]      64.0000  B
+ ---|[vKnot                           |                   11]      88.0000  B
+ ---|[vKnot_bez                       |                   17]     136.0000  B
+ ---|[vbez_ij                         |                    8]      64.0000  B
+ ---|[nCP_u_v                         |                    2]      16.0000  B
+ ---|[nE_u_v                          |                    2]      16.0000  B
+ ---|[uM_bez                          |                   91]     944.0000  B
+ ---|[vM_bez                          |                   91]     944.0000  B
+ ---|[uM_bez_mem                      |                    1]       1.7090 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                   13]      13.0000  B
+ ----|[Mval                           |                   52]     416.0000  B
+ ----|[Mi                             |                   13]     104.0000  B
+ ----#[Mj                             |                   13]     104.0000  B
+ ---|[vM_bez_mem                      |                    1]       1.7090 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                   13]      13.0000  B
+ ----|[Mval                           |                   52]     416.0000  B
+ ----|[Mi                             |                   13]     104.0000  B
+ ----#[Mj                             |                   13]     104.0000  B
+ ---|[M                               |                 1225]       3.1040 kB
+ ---|[uM_mem                          |                    1]       1.4150 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                    7]       7.0000  B
+ ----|[Mval                           |                   28]     224.0000  B
+ ----|[Mi                             |                    7]      56.0000  B
+ ----#[Mj                             |                    7]      56.0000  B
+ ---|[vM_mem                          |                    1]       1.4150 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                    7]       7.0000  B
+ ----|[Mval                           |                   28]     224.0000  B
+ ----|[Mi                             |                    7]      56.0000  B
+ ----#[Mj                             |                    7]      56.0000  B
+ ---|[Material                        |                    1]       8.0000  B
+ ---|[PatchFamily                     |                    7]      56.0000  B
+ ---|[HLevel                          |                    1]       8.0000  B
+ ---|[first_elem                      |                    1]       8.0000  B
+ ---|[NodeID_Patch2Global             |                   49]     196.0000  B
+ ---|[BoundaryCP                      |                    4]     672.0000  B
+ ---#[ChildPatch                      |                    1]       8.0000  B
+ --|[cell #    3                      |                    1]      27.6680 kB
+ ---|[GlobalID                        |                    1]       8.0000  B
+ ---|[ParentPatch                     |                    1]       8.0000  B
+ ---|[Degree                          |                    2]      16.0000  B
+ ---|[uKnot                           |                   15]     120.0000  B
+ ---|[uKnot_bez                       |                   29]     232.0000  B
+ ---|[ubez_ij                         |                   16]     128.0000  B
+ ---|[vKnot                           |                   15]     120.0000  B
+ ---|[vKnot_bez                       |                   29]     232.0000  B
+ ---|[vbez_ij                         |                   16]     128.0000  B
+ ---|[nCP_u_v                         |                    2]      16.0000  B
+ ---|[nE_u_v                          |                    2]      16.0000  B
+ ---|[uM_bez                          |                  275]       1.8080 kB
+ ---|[vM_bez                          |                  275]       1.8080 kB
+ ---|[uM_bez_mem                      |                    1]       2.2970 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                   25]      25.0000  B
+ ----|[Mval                           |                  100]     800.0000  B
+ ----|[Mi                             |                   25]     200.0000  B
+ ----#[Mj                             |                   25]     200.0000  B
+ ---|[vM_bez_mem                      |                    1]       2.2970 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                   25]      25.0000  B
+ ----|[Mval                           |                  100]     800.0000  B
+ ----|[Mi                             |                   25]     200.0000  B
+ ----#[Mj                             |                   25]     200.0000  B
+ ---|[M                               |                 5929]       9.4400 kB
+ ---|[uM_mem                          |                    1]       1.6110 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                   11]      11.0000  B
+ ----|[Mval                           |                   44]     352.0000  B
+ ----|[Mi                             |                   11]      88.0000  B
+ ----#[Mj                             |                   11]      88.0000  B
+ ---|[vM_mem                          |                    1]       1.6110 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                   11]      11.0000  B
+ ----|[Mval                           |                   44]     352.0000  B
+ ----|[Mi                             |                   11]      88.0000  B
+ ----#[Mj                             |                   11]      88.0000  B
+ ---|[Material                        |                    1]       8.0000  B
+ ---|[PatchFamily                     |                    7]      56.0000  B
+ ---|[HLevel                          |                    1]       8.0000  B
+ ---|[first_elem                      |                    1]       8.0000  B
+ ---|[NodeID_Patch2Global             |                  121]     484.0000  B
+ ---|[BoundaryCP                      |                    4]     800.0000  B
+ ---#[ChildPatch                      |                    1]       8.0000  B
+ --|[cell #    4                      |                    1]      59.2840 kB
+ ---|[GlobalID                        |                    1]       8.0000  B
+ ---|[ParentPatch                     |                    1]       8.0000  B
+ ---|[Degree                          |                    2]      16.0000  B
+ ---|[uKnot                           |                   23]     184.0000  B
+ ---|[uKnot_bez                       |                   53]     424.0000  B
+ ---|[ubez_ij                         |                   32]     256.0000  B
+ ---|[vKnot                           |                   23]     184.0000  B
+ ---|[vKnot_bez                       |                   53]     424.0000  B
+ ---|[vbez_ij                         |                   32]     256.0000  B
+ ---|[nCP_u_v                         |                    2]      16.0000  B
+ ---|[nE_u_v                          |                    2]      16.0000  B
+ ---|[uM_bez                          |                  931]       3.5360 kB
+ ---|[vM_bez                          |                  931]       3.5360 kB
+ ---|[uM_bez_mem                      |                    1]       3.4730 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                   49]      49.0000  B
+ ----|[Mval                           |                  196]       1.5680 kB
+ ----|[Mi                             |                   49]     392.0000  B
+ ----#[Mj                             |                   49]     392.0000  B
+ ---|[vM_bez_mem                      |                    1]       3.4730 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                   49]      49.0000  B
+ ----|[Mval                           |                  196]       1.5680 kB
+ ----|[Mi                             |                   49]     392.0000  B
+ ----#[Mj                             |                   49]     392.0000  B
+ ---|[M                               |                43681]      32.4800 kB
+ ---|[uM_mem                          |                    1]       2.0030 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                   19]      19.0000  B
+ ----|[Mval                           |                   76]     608.0000  B
+ ----|[Mi                             |                   19]     152.0000  B
+ ----#[Mj                             |                   19]     152.0000  B
+ ---|[vM_mem                          |                    1]       2.0030 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                   19]      19.0000  B
+ ----|[Mval                           |                   76]     608.0000  B
+ ----|[Mi                             |                   19]     152.0000  B
+ ----#[Mj                             |                   19]     152.0000  B
+ ---|[Material                        |                    1]       8.0000  B
+ ---|[PatchFamily                     |                    7]      56.0000  B
+ ---|[HLevel                          |                    1]       8.0000  B
+ ---|[first_elem                      |                    1]       8.0000  B
+ ---|[NodeID_Patch2Global             |                  361]       1.4440 kB
+ ---|[BoundaryCP                      |                    4]       1.0560 kB
+ ---#[ChildPatch                      |                    1]       8.0000  B
+ --|[cell #    5                      |                    1]     165.5240 kB
+ ---|[GlobalID                        |                    1]       8.0000  B
+ ---|[ParentPatch                     |                    1]       8.0000  B
+ ---|[Degree                          |                    2]      16.0000  B
+ ---|[uKnot                           |                   39]     312.0000  B
+ ---|[uKnot_bez                       |                  101]     808.0000  B
+ ---|[ubez_ij                         |                   64]     512.0000  B
+ ---|[vKnot                           |                   39]     312.0000  B
+ ---|[vKnot_bez                       |                  101]     808.0000  B
+ ---|[vbez_ij                         |                   64]     512.0000  B
+ ---|[nCP_u_v                         |                    2]      16.0000  B
+ ---|[nE_u_v                          |                    2]      16.0000  B
+ ---|[uM_bez                          |                 3395]       6.9920 kB
+ ---|[vM_bez                          |                 3395]       6.9920 kB
+ ---|[uM_bez_mem                      |                    1]       5.8250 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                   97]      97.0000  B
+ ----|[Mval                           |                  388]       3.1040 kB
+ ----|[Mi                             |                   97]     776.0000  B
+ ----#[Mj                             |                   97]     776.0000  B
+ ---|[vM_bez_mem                      |                    1]       5.8250 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                   97]      97.0000  B
+ ----|[Mval                           |                  388]       3.1040 kB
+ ----|[Mi                             |                   97]     776.0000  B
+ ----#[Mj                             |                   97]     776.0000  B
+ ---|[M                               |               442225]     120.0320 kB
+ ---|[uM_mem                          |                    1]       2.7870 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                   35]      35.0000  B
+ ----|[Mval                           |                  140]       1.1200 kB
+ ----|[Mi                             |                   35]     280.0000  B
+ ----#[Mj                             |                   35]     280.0000  B
+ ---|[vM_mem                          |                    1]       2.7870 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                   35]      35.0000  B
+ ----|[Mval                           |                  140]       1.1200 kB
+ ----|[Mi                             |                   35]     280.0000  B
+ ----#[Mj                             |                   35]     280.0000  B
+ ---|[Material                        |                    1]       8.0000  B
+ ---|[PatchFamily                     |                    7]      56.0000  B
+ ---|[HLevel                          |                    1]       8.0000  B
+ ---|[first_elem                      |                    1]       8.0000  B
+ ---|[NodeID_Patch2Global             |                 1225]       4.9000 kB
+ ---|[BoundaryCP                      |                    4]       1.5680 kB
+ ---#[ChildPatch                      |                    1]       8.0000  B
+ --|[cell #    6                      |                    1]     394.2600 kB
+ ---|[GlobalID                        |                    1]       8.0000  B
+ ---|[ParentPatch                     |                    1]       8.0000  B
+ ---|[Degree                          |                    2]      16.0000  B
+ ---|[uKnot                           |                   71]     568.0000  B
+ ---|[uKnot_bez                       |                  197]       1.5760 kB
+ ---|[ubez_ij                         |                  128]       1.0240 kB
+ ---|[vKnot                           |                   71]     568.0000  B
+ ---|[vKnot_bez                       |                  197]       1.5760 kB
+ ---|[vbez_ij                         |                  128]       1.0240 kB
+ ---|[nCP_u_v                         |                    2]      16.0000  B
+ ---|[nE_u_v                          |                    2]      16.0000  B
+ ---|[uM_bez                          |                12931]      13.9040 kB
+ ---|[vM_bez                          |                12931]       8.9760 kB
+ ---|[uM_bez_mem                      |                    1]      10.5290 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                  193]     193.0000  B
+ ----|[Mval                           |                  772]       6.1760 kB
+ ----|[Mi                             |                  193]       1.5440 kB
+ ----#[Mj                             |                  193]       1.5440 kB
+ ---|[vM_bez_mem                      |                    1]       6.8330 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                  193]     193.0000  B
+ ----|[Mval                           |                  464]       3.7120 kB
+ ----|[Mi                             |                  116]     928.0000  B
+ ----#[Mj                             |                  116]     928.0000  B
+ ---|[M                               |              5499025]     314.9760 kB
+ ---|[uM_mem                          |                    1]       4.3550 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                   67]      67.0000  B
+ ----|[Mval                           |                  268]       2.1440 kB
+ ----|[Mi                             |                   67]     536.0000  B
+ ----#[Mj                             |                   67]     536.0000  B
+ ---|[vM_mem                          |                    1]       3.2510 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                   67]      67.0000  B
+ ----|[Mval                           |                  176]       1.4080 kB
+ ----|[Mi                             |                   44]     352.0000  B
+ ----#[Mj                             |                   44]     352.0000  B
+ ---|[Material                        |                    1]       8.0000  B
+ ---|[PatchFamily                     |                    7]      56.0000  B
+ ---|[HLevel                          |                    1]       8.0000  B
+ ---|[first_elem                      |                    1]       8.0000  B
+ ---|[NodeID_Patch2Global             |                 4489]      17.9560 kB
+ ---|[BoundaryCP                      |                    4]       2.5920 kB
+ ---#[ChildPatch                      |                    1]       8.0000  B
+ --|[cell #    7                      |                    1]     793.3720 kB
+ ---|[GlobalID                        |                    1]       8.0000  B
+ ---|[ParentPatch                     |                    1]       8.0000  B
+ ---|[Degree                          |                    2]      16.0000  B
+ ---|[uKnot                           |                  135]       1.0800 kB
+ ---|[uKnot_bez                       |                  389]       3.1120 kB
+ ---|[ubez_ij                         |                  256]       2.0480 kB
+ ---|[vKnot                           |                  135]       1.0800 kB
+ ---|[vKnot_bez                       |                  389]       3.1120 kB
+ ---|[vbez_ij                         |                  256]       2.0480 kB
+ ---|[nCP_u_v                         |                    2]      16.0000  B
+ ---|[nE_u_v                          |                    2]      16.0000  B
+ ---|[uM_bez                          |                50435]      27.7280 kB
+ ---|[vM_bez                          |                50435]      10.0640 kB
+ ---|[uM_bez_mem                      |                    1]      19.9370 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                  385]     385.0000  B
+ ----|[Mval                           |                 1540]      12.3200 kB
+ ----|[Mi                             |                  385]       3.0800 kB
+ ----#[Mj                             |                  385]       3.0800 kB
+ ---|[vM_bez_mem                      |                    1]       6.6890 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                  385]     385.0000  B
+ ----|[Mval                           |                  436]       3.4880 kB
+ ----|[Mi                             |                  109]     872.0000  B
+ ----#[Mj                             |                  109]     872.0000  B
+ ---|[M                               |             77035729]     628.2560 kB
+ ---|[uM_mem                          |                    1]       7.4910 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                  131]     131.0000  B
+ ----|[Mval                           |                  524]       4.1920 kB
+ ----|[Mi                             |                  131]       1.0480 kB
+ ----#[Mj                             |                  131]       1.0480 kB
+ ---|[vM_mem                          |                    1]       3.0750 kB
+ ----|[M_i                            |                    1]       8.0000  B
+ ----|[M_j                            |                    1]       8.0000  B
+ ----|[computed                       |                  131]     131.0000  B
+ ----|[Mval                           |                  156]       1.2480 kB
+ ----|[Mi                             |                   39]     312.0000  B
+ ----#[Mj                             |                   39]     312.0000  B
+ ---|[Material                        |                    1]       8.0000  B
+ ---|[PatchFamily                     |                    7]      56.0000  B
+ ---|[HLevel                          |                    1]       8.0000  B
+ ---|[first_elem                      |                    1]       8.0000  B
+ ---|[NodeID_Patch2Global             |                17161]      68.6440 kB
+ ---#[BoundaryCP                      |                    4]       4.6400 kB
+ -|[n_IGApatches                      |                    1]       8.0000  B
+ -|[Weights                           |                23431]     157.4240 kB
+ -|[NodeComputed                      |                23431]      23.4310 kB
+ -|[BoundaryElementNeighbours         |                    0]          ... -B
+ -|[ElemPatch                         |                21844]      87.3760 kB
+ -|[ElemLevel                         |                21844]      87.3760 kB
+ -|[Degree                            |                    1]       8.0000  B
+ -|[ParentElements                    |                21844]      95.8240 kB
+ -|[ChildElements                     |                87376]      95.8480 kB
+ -|[Connectivity_local                |               349504]       1.5341 MB
+ -|[PatchLevel                        |                    7]      28.0000  B
+ -|[A                                 |                23431]      23.4310 kB
+ -|[B                                 |                    1]       2.1600 kB
+ -|[dB                                |                    1]       4.2080 kB
+ -|[ddB                               |                    1]       6.2560 kB
+ -|[N                                 |              1533952]      12.2716 MB
+ -|[dN                                |              3067904]      24.5432 MB
+ -|[RefineSubmodel                    |                    1]       8.0000  B
+ -|[A_old                             |                23431]      23.4310 kB
+ -|[Aminus                            |                23431]      23.4310 kB
+ -|[Aplus                             |                23431]      23.4310 kB
+ -|[Aa                                |                23431]      23.4310 kB
+ -|[M                                 |            549011761]     389.1040 kB
+ -|[ChildElems                        |                    0]          ... -B
+ -|[B_vis                             |                  128]       1.0240 kB
+ -|[vis_newRelevantNodes              |                26384]     211.0720 kB
+ -|[Nodes_vis                         |                41940]     335.5200 kB
+ -|[Connectivity_vis                  |                47936]     383.4880 kB
+ -|[InverseConnectivity_vis           |                13980]       1.9492 MB
+ --|[cell #13977                      |                    2]      16.0000  B
+ --|[cell #13978                      |                    1]       8.0000  B
+ --|[cell #13979                      |                    1]       8.0000  B
+ --|[cell #13980                      |                    1]       8.0000  B
+ -|[RefineElements                    |                  648]       5.1840 kB
+ -|[ElementsActiveOld                 |                21844]      21.8440 kB
+ -|[ElementsChildActiveOld            |                21844]      21.8440 kB
+ -|[ddN                               |                 5992]      47.9360 kB
+ -#[NodeGlob2Loc                      |                46862]     187.4480 kB
+ |[Mesh                               |                    1]     602.0000  B
+ -|[FileName                          |                   22]      44.0000  B
+ -|[Program                           |                   11]      22.0000  B
+ -#[NewPostMeshNeeded                 |                    1]       8.0000  B
+ |[Elements                           |                21844]      12.2054 MB
+ -|[cell #21841                       |                    0]          ... -B
+ -|[cell #21842                       |                    0]          ... -B
+ -|[cell #21843                       |                    0]          ... -B
+ -|[cell #21844                       |                    0]          ... -B
+ |[MasterNodes                        |                    0]          ... -B
+ |[MidNode                            |                    0]          ... -B
+ |[Nodes                              |                70293]     472.2560 kB
+ |[Connectivity                       |                    1]       1.5342 MB
+ |[Dimension                          |                    1]       8.0000  B
+ |[Size                               |                    2]      16.0000  B
+ |[Faces                              |                    9]      72.0000  B
+ |[Volume                             |                    1]       8.0000  B
+ |[Vertices                           |                   12]      96.0000  B
+ |[NumberElements                     |                    1]       8.0000  B
+ |[NumberNodes                        |                    1]       8.0000  B
+ |[ElementInfo                        |               196596]     862.9280 kB
+ |[NodalMaterials                     |                23431]      23.4310 kB
+ |[Boundary                           |                    1]          ... -B
+ |[ElementTypeInfo                    |                    4]      32.0000  B
+ |[inverseConnectivity                |                23431]       2.3480 MB
+ -|[cell #23428                       |                    0]          ... -B
+ -|[cell #23429                       |                    0]          ... -B
+ -|[cell #23430                       |                    0]          ... -B
+ -|[cell #23431                       |                    0]          ... -B
+ |[GeometricalTolerance               |                    1]       8.0000  B
+ |[Post                               |                    1]      35.4494 MB
+ -|[WriteResultsFile                  |                    1]       8.0000  B
+ -|[WriteResultsInterval              |                    1]       8.0000  B
+ -|[PostFileName                      |                   21]      42.0000  B
+ -|[PostDirectory                     |                   27]      54.0000  B
+ -|[useConnectedElements              |                    1]       8.0000  B
+ -|[relevantQPResultsRange            |                   12]      96.0000  B
+ -|[WeightingMethod                   |                   16]      32.0000  B
+ -|[NodalResultsInfo                  |                    1]     370.0000  B
+ -|[QPResultsInfo                     |                    1]     626.0000  B
+ -|[IncrementalPost                   |                    1]     712.0000  B
+ -|[postAssemblyFlag                  |                    1]       8.0000  B
+ -|[relevantNodes                     |                35960]     287.6800 kB
+ -|[relevantQPs                       |                35960]      17.5786 MB
+ --|[cell #35957                      |                   32]     256.0000  B
+ --|[cell #35958                      |                   16]     128.0000  B
+ --|[cell #35959                      |                   16]     128.0000  B
+ --|[cell #35960                      |                   32]     256.0000  B
+ -#[QPWeights                         |                35960]      17.5786 MB
+ --|[cell #35957                      |                   32]     256.0000  B
+ --|[cell #35958                      |                   16]     128.0000  B
+ --|[cell #35959                      |                   16]     128.0000  B
+ --|[cell #35960                      |                   32]     256.0000  B
+ |[QuadraturePoints                   |              1150464]       9.2037 MB
+ |[QuadraturePointHistory             |              2300928]      18.4074 MB
+ |[NodalDOF                           |                46862]     374.8960 kB
+ |[inverseNodalDOF                    |                46862]     374.8960 kB
+ |[TotalDOF                           |                    1]       8.0000  B
+ |[Solution                           |                93724]     749.7920 kB
+ |[RightHandSide                      |                93724]     749.7920 kB
+ |[AdditionalLoad                     |                46862]     374.8960 kB
+ |[ConstraintMatrix                   |                    0]          ... -B
+ |[ConditionMatrix                    |             18276180]     381.1440 kB
+ |[ConditionVector                    |                  780]       6.2400 kB
+ |[ExternalRightHandSide              |                93724]     749.7920 kB
+ |[CondensationMatrix                 |                    2]     224.0000  B
+ |[CondensationIndex                  |                    5]     378.5600 kB
+ |[CurrentIteration                   |                    1]       8.0000  B
+ #[Hierarchical2MultiLevel            |                    1]      73.3920 kB
+ -|[HBS_DOFs                          |                 9106]      72.8480 kB
+ -|[NodalDOF                          |                    1]       8.0000  B
+ -#[CADOF_size                        |                    1]       8.0000  B
