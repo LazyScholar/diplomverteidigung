@@ -1,24 +1,24 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Verteidigung - DA</title>
+    <title>Verteidigung - DA</title>
     <link rel="shortcut icon" type="image/x-icon" href="graphics/favicon.ico">
 
-		<link rel="stylesheet" href="reveal/dist/reset.css">
-		<link rel="stylesheet" href="reveal/dist/reveal.css">
+    <link rel="stylesheet" href="reveal/dist/reset.css">
+    <link rel="stylesheet" href="reveal/dist/reveal.css">
 
-		<link rel="stylesheet" href="whiteTU.css" id="theme">
+    <link rel="stylesheet" href="whiteTU.css" id="theme">
     <link rel="stylesheet" href="graphics/slider.css">
 
-		<link rel="stylesheet" href="reveal/pugin/highlight/monokai.css" id="highlight-theme">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section data-menu-title="Titelfolie" class="nofooter" data-background="-webkit-linear-gradient(-45deg, rgb(0, 105, 175) 0%, rgb(0, 48, 94) 100%)">
+    <link rel="stylesheet" href="reveal/plugin/highlight/monokai.css" id="highlight-theme">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-menu-title="Titelfolie" class="nofooter" data-background="-webkit-linear-gradient(-45deg, rgb(0, 105, 175) 0%, rgb(0, 48, 94) 100%)">
           <div class="header unselectable" style="margin-left: auto; margin-right: auto; ">
             <img src="logos/TUDresdenLogoBlau.png" style=" float: left; height: 3.5em; border: none; box-shadow: none; vertical-align: middle; margin: 1.25em 7.5vw 1.25em 7.5vw;">
             <img src="logos/DDC_Logo.png" style=" float: right; height: 3.5em; border: none; box-shadow: none; vertical-align: middle; margin: 1.25em 7.5vw 1.25em 7.2vw;">
@@ -538,8 +538,8 @@
           </div>
         </section>
 
-			</div>
-		</div>
+      </div>
+    </div>
 
     <div id="LShape_pde_fig_modal" class="modal_img" style="z-index: 5; background-image: url('graphics/LShape_solu.png'); background-repeat: no-repeat;  background-size: contain; background-position: center; "></div>
     <div id="PlateHole_pde_fig_modal" class="modal_img" style="z-index: 5; background-image: url('graphics/PlateHole_solu.png'); background-repeat: no-repeat;  background-size: contain; background-position: center; "></div>
@@ -547,22 +547,20 @@
     <div id="snackbar" style="text-align: start; font-family: Courier New;">Some text some message..</div>
 
     <script src="reveal/module/math.min.js"></script>
-		<script src="reveal/dist/reveal.js"></script>
+    <script src="reveal/dist/reveal.js"></script>
     <script src="reveal/plugin/menu/menu.js"></script>
     <script src="reveal/plugin/math/math.js"></script>
 
+    <script src="reveal/module/d3.v7.min.js"></script>
+    <script src="reveal/module/plotly-2.9.0.min.js"></script>
 
-    <script src="reveal/module/d3.v5.min.js"></script>
-    <script src="reveal/module/plotly-latest.min.js"></script>
-
-
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
         controlsTutorial: false,
-				hash: true,
+        hash: true,
         history: false,
         transition: 'slide',
         backgroundTransition: 'slide',
@@ -588,15 +586,19 @@
           openSlideNumber: true,
         },
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+          //mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+          // TODO: update MathJax if https://github.com/plotly/plotly.js/issues/5374 gets resolved
+          //mathjax: 'http://cdn.mathjax.org/mathjax/2.7.5/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js',
           //config: 'TeX-AMS-MML_SVG',
+          config: 'TeX-MML-AM_CHTML',
           // pass other options into `MathJax.Hub.Config()`
           // TeX: { Macros: { RR: "{\\bf R}" } }
         },
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMenu, RevealMath]
-			});
-		</script>
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMenu, RevealMath]
+      });
+    </script>
 
     <div id="hidden" style="display: none;">
       <div id="footer">
@@ -624,5 +626,5 @@
 <script src="graphics/help_funs.js"></script>
 <script src="graphics/graphics.js" async defer></script>
 <script src="graphics/offline_mod2.js" async defer></script>
-	</body>
+  </body>
 </html>

@@ -370,9 +370,7 @@ function updateFig(update_data_nr) {
     y: [C_y_fig003]
   }, [2]);
 }
-// drag behavior from : http://bl.ocks.org/niclasmattsson/7bceb05fba6c71c78d507adae3d29417
 function startDragBehavior() {
-  //var d3 = Plotly.d3;
   var drag = d3.drag();
   drag.subject(function() {
     var transform = d3.select(this).attr("transform");
@@ -382,10 +380,8 @@ function startDragBehavior() {
       y: translate[1]
     };
   });
-  // drag.on("dragstart", function() {  });
-  drag.on("drag", function() {
-    var xmouse = d3.event.x,
-      ymouse = d3.event.y;
+  drag.on("drag", function(d) {
+    var xmouse = d.x, ymouse = d.y;
     d3.select(this).attr("transform", "translate(" + [xmouse, ymouse] + ")");
     if (this.parentElement.parentElement.parentElement.parentElement.__data__[0] == "x2y2") {
       changed_info.curveNumber = 0;
@@ -400,7 +396,7 @@ function startDragBehavior() {
     changed_info.y = yaxis.p2l(ymouse);
     changed_info.pointNumber = this.__data__.i;
     updateFig_ondrag();
-    updateFig(changed_info.curveNumber);
+    //updateFig(changed_info.curveNumber);
   });
   drag.on("end", function() {
     updateFig_ondrag();
